@@ -1,10 +1,13 @@
 package edu.unc.cs.haydenl.redaktr;
 
 import android.content.Intent;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Switch;
+
+import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
 public class Settings extends AppCompatActivity {
 
@@ -18,6 +21,7 @@ public class Settings extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+        requestPermissions(new String[]{WRITE_EXTERNAL_STORAGE}, 1);
     }
 
     public void takePicture(View v){
