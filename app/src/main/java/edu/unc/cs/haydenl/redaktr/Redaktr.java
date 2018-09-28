@@ -51,9 +51,6 @@ public class Redaktr extends AppCompatActivity {
         context = this;
     }
 
-
-
-
     private void dispatchTakePictureIntent() {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 
@@ -68,7 +65,7 @@ public class Redaktr extends AppCompatActivity {
         if (photoFile != null) {
             Log.d("mylog", "Photofile not null");
             photoUri = FileProvider.getUriForFile(this,
-                    "com.vysh.fullsizeimage.fileprovider",
+                    "edu.unc.cs.haydenl.redaktr.fileprovider",
                     photoFile);
             takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoUri);
             startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
@@ -79,7 +76,7 @@ public class Redaktr extends AppCompatActivity {
         // Create an image file name
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         String imageFileName = "JPEG_" + timeStamp + "_";
-        File storageDir = getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
+        File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
         File image = File.createTempFile(
                 imageFileName,  /* prefix */
                 ".jpg",         /* suffix */
@@ -103,7 +100,6 @@ public class Redaktr extends AppCompatActivity {
             }
         }
     }
-
 
     private void redactPicture(Bitmap b){
         redactedPicture.setImageBitmap(b);
