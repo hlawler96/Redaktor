@@ -32,10 +32,10 @@ import static android.os.Environment.getExternalStoragePublicDirectory;
 
 public class Redaktr extends AppCompatActivity {
 
-    public static final String PERSONAL_INFORMATION = "personalInformation";
-    public static final String SOCIAL_SECURITY = "socialSecurity";
-    public static final String CREDIT_CARD = "creditCard";
-    public static final String PHONE_NUMBERS = "phoneNumbers";
+    public static final String PERSONAL_INFORMATION_ENABLED = "personalInformationEnabled";
+    public static final String SOCIAL_SECURITY_ENABLED = "socialSecurityEnabled";
+    public static final String CREDIT_CARD_ENABLED = "creditCardEnabled";
+    public static final String PHONE_NUMBERS_ENABLED = "phoneNumbersEnabled";
     private static final int REQUEST_IMAGE_CAPTURE = 1;
     private ImageView redactedPicture;
     private Context context;

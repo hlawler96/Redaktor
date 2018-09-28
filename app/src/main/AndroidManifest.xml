@@ -21,16 +21,21 @@
         </provider>
         <activity android:name=".Settings"
             android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".SigninActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".Redaktr"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+            <!--TODO BackStack when pressing back-->
         </activity>
-        <activity android:name=".MainActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Redaktr"
-            android:screenOrientation="portrait"></activity>
+
         <meta-data
             android:name="com.google.firebase.ml.vision.DEPENDENCIES"
             android:value="ocr" />
