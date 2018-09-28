@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.ml.vision.FirebaseVision;
 import com.google.firebase.ml.vision.common.FirebaseVisionImage;
 import com.google.firebase.ml.vision.text.FirebaseVisionText;
@@ -59,6 +60,7 @@ public class Redaktr extends AppCompatActivity {
     }
 
     private void redactPicture(Bitmap b){
+        FirebaseApp.initializeApp(this);
         FirebaseVisionImage image = FirebaseVisionImage.fromBitmap(b);
         FirebaseVisionTextRecognizer textRecognizer = FirebaseVision.getInstance()
                 .getOnDeviceTextRecognizer();
@@ -67,6 +69,7 @@ public class Redaktr extends AppCompatActivity {
                     @Override
                     public void onSuccess(FirebaseVisionText result) {
                         Log.d("RESULT", result.getText());
+                        Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show();
                     }
                 })
                 .addOnFailureListener(
