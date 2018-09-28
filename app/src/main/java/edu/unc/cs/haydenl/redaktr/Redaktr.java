@@ -1,12 +1,16 @@
 package edu.unc.cs.haydenl.redaktr;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.os.Handler;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -23,6 +27,7 @@ public class Redaktr extends AppCompatActivity {
     public static final String PHONE_NUMBERS = "phoneNumbers";
     private static final int REQUEST_IMAGE_CAPTURE = 1;
     private ImageView redactedPicture;
+    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +35,7 @@ public class Redaktr extends AppCompatActivity {
         setContentView(R.layout.activity_redaktr);
         redactedPicture = findViewById(R.id.redactedPicture);
         dispatchTakePictureIntent();
+        context = this;
     }
 
 
@@ -60,16 +66,21 @@ public class Redaktr extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<FirebaseVisionText>() {
                     @Override
                     public void onSuccess(FirebaseVisionText result) {
-                        // Task completed successfully
-                        // ...
+                        Log.d("RESULT", result.getText());
                     }
                 })
                 .addOnFailureListener(
                         new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
-                                // Task failed with an exception
-                                // ...
+                                Toast.makeText(context, "Sorry, we couldn't recognize that photo. Please try again", Toast.LENGTH_SHORT).show();
+                                new Handler().postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        dispatchTakePictureIntent();
+                                    }
+                                }, 2000);
+
                             }
                         });
 
