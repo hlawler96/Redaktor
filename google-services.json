@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "49021593661",
+    "firebase_url": "https://redaktr-b7fef.firebaseio.com",
+    "project_id": "redaktr-b7fef",
+    "storage_bucket": "redaktr-b7fef.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:49021593661:android:72fe83c0ce64ce7f",
+        "android_client_info": {
+          "package_name": "edu.unc.cs.haydenl.redaktr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "49021593661-8iogf8m23pbrvuld0oj8ua8veie1e9gc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.unc.cs.haydenl.redaktr",
+            "certificate_hash": "55c445d2786b3ef67ed2feb0fbc70f839f41f265"
+          }
+        },
+        {
+          "client_id": "49021593661-gr3vq4mgrbt3qmnhnjkqrnkr0onq05sm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8bFLzYZjA_YOuqUWHp74qyVypO3POHtY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "49021593661-gr3vq4mgrbt3qmnhnjkqrnkr0onq05sm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
