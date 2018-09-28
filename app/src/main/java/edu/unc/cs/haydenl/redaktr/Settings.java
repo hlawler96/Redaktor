@@ -3,6 +3,7 @@ package edu.unc.cs.haydenl.redaktr;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Switch;
 
 public class Settings extends AppCompatActivity {
@@ -19,7 +20,7 @@ public class Settings extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
     }
 
-    public void takePicture(){
+    public void takePicture(View v){
         personalInformation = ((Switch) findViewById(R.id.personalInformation)).isChecked();
         socialSecurity = ((Switch) findViewById(R.id.socialSecurity)).isChecked();
         phoneNumber = ((Switch) findViewById(R.id.phoneNumbers)).isChecked();
